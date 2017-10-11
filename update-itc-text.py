@@ -35,6 +35,7 @@ if __name__ == "__main__":
             "title": "name.txt",
             "description": "description.txt",
             "subtitle": "subtitle.txt",
+            "whatsnew": "release_notes.txt",
         }
 
         for field_name, file_name in fields_to_files.items():

@@ -22,7 +22,7 @@ set -e
 
 ITC_USERNAME=sarentz@mozilla.com
 APP_ID=org.mozilla.ios.Firefox
-APP_VERSION=9.0
+APP_VERSION=9.2
 
 rm -rf Preview.html metadata screenshots
 
