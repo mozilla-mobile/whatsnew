@@ -22,7 +22,7 @@ set -e
 
 ITC_USERNAME=sarentz@mozilla.com
 APP_ID=org.mozilla.ios.Firefox
-APP_VERSION=9.2
+APP_VERSION=10.7
 
 rm -rf Preview.html metadata screenshots
 
@@ -31,9 +31,9 @@ echo "* Updating $APP_ID $APP_VERSION"
 echo "*"
 echo
 
-DELIVER_FORCE_OVERWRITE=1 fastlane deliver download_metadata -u $ITC_USERNAME -a $APP_ID -z $APP_VERSION --skip_screenshots
-./update-itc-text.py
-fastlane deliver update_metadata -u $ITC_USERNAME -a $APP_ID -z $APP_VERSION --skip_binary_upload
+DELIVER_FORCE_OVERWRITE=1 fastlane deliver download_metadata -u $ITC_USERNAME -a $APP_ID -z $APP_VERSION --skip_screenshots || exit 1
+./update-itc-text.py || exit 1
+fastlane deliver update_metadata -u $ITC_USERNAME -a $APP_ID -z $APP_VERSION --skip_binary_upload || exit 1
 
 echo
 echo "*"
